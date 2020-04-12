@@ -1,5 +1,6 @@
 10 Tips To Improve Your Code Reviews
 ==========
+Code review is a process and it’s evolving. It’s like every skill that we need to train in order to be better at it. Those 10 tips can help you improve code review process in your organisation.
 <!-- more -->
 ## Talk about CODE, not the PERSON
 It's common that we either take or write a comment personally.
