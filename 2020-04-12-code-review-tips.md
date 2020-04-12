@@ -1,10 +1,6 @@
----
-title: "10 Code Review Tips"
-created_at: 2020-04-12 14:20:18 +0100
-author: Łukasz Reszke
-tags: [ 'code review', 'team', 'software quality' ]
-publish: true
----
+
+title
+==========
 <!-- more -->
 
 ## Talk about CODE, not the PERSON 
