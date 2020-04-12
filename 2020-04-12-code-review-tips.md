@@ -1,8 +1,6 @@
-
-title
+10 Tips To Improve Your Code Reviews
 ==========
 <!-- more -->
-
 ## Talk about CODE, not the PERSON 
 ## Split your commit into smaller chunks. For example, try to separate pure business change from changing variable name in 100 files.
 ## Think about business problem that the code is solving and look for issues in that context first
