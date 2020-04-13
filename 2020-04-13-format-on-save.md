@@ -1,6 +1,6 @@
 Format On Save in Visual Studio Code
 =====================================
-![format on save in visual studio code](https://lukaszcoding.com/wp-admin/upload.php?item=54)
+![format on save in visual studio code](https://lukaszcoding.com/wp-content/uploads/2020/04/Format-On-Save.png)
 Increase your productivity by formatting code on every save.
 ----------
 Ever forgot to format your code before creating pull request?
