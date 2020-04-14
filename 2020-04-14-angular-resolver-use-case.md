@@ -1,5 +1,8 @@
 Resolvers in Angular - Example
 ==============================
+
+![angular resolvers](https://lukaszcoding.com/wp-content/uploads/2020/04/Resolvers-in-Angular.png)
+
 Resolver is an interface that class can implement to be a data provider. 
 That data provider class is used by Angular's router to provide the data during navigation.
 That interface defines one method, *resolve()*. It's invoked on navigation start event.
