@@ -38,7 +38,9 @@ const routes: Routes = [
   }
 ];
 ```
+
 Report resolver would be implemented like this
+
 ```javascript
 export class ReportResolver implements Resolve<ReportResolved> {
 
