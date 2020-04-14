@@ -39,7 +39,7 @@ const routes: Routes = [
 ];
 ```
 Report resolver would be implemented like this
-`
+```javascript
 export class ReportResolver implements Resolve<ReportResolved> {
 
     constructor(private reportsProvider: ReportsProvider) { }
@@ -54,7 +54,7 @@ export class ReportResolver implements Resolve<ReportResolved> {
             );
     }
 }
-`
+```
 
 Shared report would look pretty much the same, but would call other service method.
 
