@@ -17,9 +17,9 @@ So we have two situations:
 	• Owner viewing report that he has created
 	• Other person viewing shared report
 
-Those two use cases could be solved by two different API endpoints (that return the data based on different business rules). 
-Reports/__id__
-Reports/Shared/__id__
+Those two use cases could be solved by two different API endpoints (that return the data based on different business rules).
+- Reports/__id__
+- Reports/Shared/__id__
 
 And this is where Resolvers are handy.
 They can provide different data to component, using different api endpoints. Based on route.
@@ -39,7 +39,7 @@ const routes: Routes = [
 ];
 `
 
-Report resolver would look like this
+Report resolver would be implemented like this
 `
 export class ReportResolver implements Resolve<ReportResolved> {
 
