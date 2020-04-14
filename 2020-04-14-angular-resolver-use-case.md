@@ -60,10 +60,11 @@ Shared report would look pretty much the same, but would call other service meth
 
 ### Summary
 
-Of course this is one way of handling that problem.
-Another way could be checking current route by ActivatedRoute service in ngOnInit. Based on that get data that you want. But I find this solution more elegant.
-
-The thing I like about this feature is that the data is ready just in the moment that page is loaded and I can simplify component's code by using built in feature.
-By that that I don't need `if` statements to handle different endpoints.
-And component stays dumb.
+This is one way of handling that problem.
+Another way could be checking current route by ActivatedRoute service in ngOnInit. Based on that get data that you want. 
+But I find this solution more elegant, because:
+- data is ready just in the moment that page is loaded 
+- simplified component's code by using built in feature
+- no need `if` statements to handle different situations
+- component stays dumb.
 
