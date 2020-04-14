@@ -24,20 +24,6 @@ Those two use cases could be solved by two different API endpoints (that return 
 And this is where Resolvers are handy.
 They can provide different data to component, using different api endpoints. Based on route.
 
-`const routes: Routes = [
-  {
-    path: ':id',
-    component: ReportsComponent,
-    resolve: { report: ReportResolver }
-  },
-  {
-    path: 'shared/:id',
-    component: ReportsComponent,
-    resolve: { report: SharedReportResolver }
-  }
-];`
-
-
 ```
 const routes: Routes = [
   {
@@ -69,7 +55,8 @@ export class ReportResolver implements Resolve<ReportResolved> {
                 })
             );
     }
-}```
+}
+```
 
 Shared report would look pretty much the same, but would call other service method.
 
