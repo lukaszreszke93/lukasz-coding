@@ -14,8 +14,8 @@ They're shared as read-only.
 Person that has access to report should see the same data as owner of that report.
 
 So we have two situations:
-	• Owner viewing report that he has created
-	• Other person viewing shared report
+- Owner viewing report that he has created
+- Other person viewing shared report
 
 Those two use cases could be solved by two different API endpoints (that return the data based on different business rules).
 - Reports/__id__
