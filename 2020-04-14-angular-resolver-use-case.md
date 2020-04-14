@@ -38,8 +38,7 @@ They can provide different data to component, using different api endpoints. Bas
 ];`
 
 
-```javascript
-
+```
 const routes: Routes = [
   {
     path: ':id',
@@ -52,13 +51,11 @@ const routes: Routes = [
     resolve: { report: SharedReportResolver }
   }
 ];
-
 ```
 
 Report resolver would be implemented like this
 
-```javascript
-
+```
 export class ReportResolver implements Resolve<ReportResolved> {
 
     constructor(private reportsProvider: ReportsProvider) { }
@@ -72,9 +69,7 @@ export class ReportResolver implements Resolve<ReportResolved> {
                 })
             );
     }
-}
-
-```
+}```
 
 Shared report would look pretty much the same, but would call other service method.
 
