@@ -24,7 +24,7 @@ Those two use cases could be solved by two different API endpoints (that return 
 And this is where Resolvers are handy.
 They can provide different data to component, using different api endpoints. Based on route.
 
-```js
+`
 const routes: Routes = [
   {
     path: ':id',
@@ -38,7 +38,7 @@ const routes: Routes = [
   }
 ];
 
-```
+`
 
 ```javascript
 
