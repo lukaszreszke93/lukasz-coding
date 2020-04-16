@@ -12,7 +12,8 @@ Other tricky part was to actually mock DbSets and DbContext to return values.
 I ended with method similar to this one to get mocked DbSet:
 
 ```csharp
-        public Mock<DbSet<Order>> GetOrderDbSet(IList<Order> data)
+
+public Mock<DbSet<Order>> GetOrderDbSet(IList<Order> data)
         {
             var mockSet = new Mock<DbSet<Order>>();
 
@@ -32,6 +33,7 @@ So with that, I was ready to prepare my entity relations and mock up DbSet to re
 It leaded me to test that was similar to this
 
 ```csharp
+
         [Fact]
         public void Should_return_one_item()
         {
@@ -70,7 +72,8 @@ But I was not able to make it work. Maybe I did something wrong (if you know sol
 So I was forced to do it differently. I extended my mocking methods to be able to track Add and SaveChanges methods of EF Core Context.
 
 ```csharp
-  public Mock<DbSet<Order>> GetOrderDbSet(IList<Order> data)
+
+        public Mock<DbSet<Order>> GetOrderDbSet(IList<Order> data)
         {
             var mockSet = new Mock<DbSet<Order>>();
             var queryable = data.AsQueryable();
@@ -103,6 +106,7 @@ I moved my tests into a little bit other direction than I planned in the beginin
 Tested method and test looks like this:
 
 ```csharp
+
         public void AddOrderForCustomer(string customerId, Order newOrder)
         {
             if (customerId == null) throw new ArgumentNullException(nameof(customerId));
@@ -117,6 +121,7 @@ Tested method and test looks like this:
 ```
 
 ```csharp
+
         [Fact]
         public void SaveChanges_should_be_called()
         {
