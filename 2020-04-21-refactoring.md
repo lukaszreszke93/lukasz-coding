@@ -43,7 +43,7 @@ Always.
 
 Not kidding.
 
-Did you ever experienced situation when there was small piece of functionality that had to be added to existing code?
+Have you ever experienced situation when there was small piece of functionality that had to be added to existing code?
 
 Did you then think that if you would change existing structure, just a little bit, it would be piece of cake to add the new feature here?
 
@@ -51,7 +51,9 @@ That was the right thinking. It's way better direction to take instead of copy p
 This way the code would end up with duplicated logic, which needs to be changed in multiple places, whenever business logic changes (and you have to find that code in multiple places..).
 
 ## Is that really always?
-Well. There's a but. You should have tests. Either way, how can you verify that one of the key aspects of refactoring is fulfiled?
+Well. There's a but.
+You should have tests.
+Either way, how can you verify that one of the key aspects of refactoring is fulfiled?
 The one that is saying there's *no change in [code's] observable behavior*.
 If you don't have tests, try to write them before you start.
 There are three major benefits of that:
