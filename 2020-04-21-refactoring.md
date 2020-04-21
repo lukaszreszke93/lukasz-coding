@@ -16,7 +16,7 @@ Accoring to Martin Fowler, refactoring means introducing big changes in code by 
 ## What refactoring is not?
 Sometimes there's a case where refactoring is started and we dig deeper and deeper. In result we end up with code that is not working.
 There are different causes for that. One of them is lack of plan or scope. The other can be lack of tests.
-So according to definition, this is not refactoring. Because it assumes *no change in its observable behavior*.
+So according to definition, this is not refactoring. The reason its not refactoring is that, refactoring assumes *no change in its observable behavior*.
 
 ## So what is refactoring?
 It's a process of reorganizing and cleaning up the code. Perhaps preparing it for a new feature, in order to develop it faster.
@@ -66,3 +66,5 @@ There are three major benefits of that:
 Try to continously improve your code. That process is called *Continuous Refactoring* or *Ongoing refactoring*. Don't wait until **you have to do that** because project gets harder and harder to maintain.
 
 Write tests. They'll help you now or in future, when you'll decide that some piece of code needs to be modified in order to extend functionality.
+
+
