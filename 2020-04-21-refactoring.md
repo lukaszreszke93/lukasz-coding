@@ -38,6 +38,11 @@ Even worse.
 
 It's probably gonna be me, after some time. And my memory is not so good. So I better write readable letter to myself from future instead of having to think about the same problem, again.
 
+## Is refactoring going to slow me down?
+Short term? Maybe.
+Long term it will increase your productivity. Code will be more readable and understandable.
+So it leads to overall faster delivery of code that has better quality.
+
 ## When should I refactor?
 Always. 
 
