@@ -1,17 +1,20 @@
 "4+1" Architectural View Model
 ===============================
 
-Trying to capture the software system's architecture into one diagram can be hard. It might be even impossible for a complex system if there would be a readability requirement. One reason for that is the software systems have multiple layers that should be represented on those diagrams. Actually, the author of, "4+1" Architectural View Model, Kruchten, called them *views*.
+Trying to capture the software system's architecture into one diagram can be hard. It might be even impossible for a complex system if there would be a readability requirement. One reason for that is the software systems have multiple layers that should be represented on those diagrams. Actually, the author of, "4+1" Architectural View Model, Kruchten, called them *architectual views*.
 
-Those views will be represented by different stakeholders.
+Those views are represented by different stakeholders.
 Some of them are going to be interested only in the business logic.
-The other part will be interested in how the code should be written.
+
+Others will be interested in how the code should be written.
+
 The hosting of the application will be important for other people.
+
 Security and other non-functional requirements?
 And probably much more.
 
 ## Architectural Model
-According to this model, there are 5 views:
+According to this model, there are 5 views working with each other:
 - logical view,
 - process view,
 - development view,
@@ -24,7 +27,7 @@ The "4+1" View Model diagram
 
 Each of these views has a different goal and will be addressed when talking to different stakeholders. The goal is to be able to distinguish which view should be used in a given discussion or meeting. 
 
-I am not sure who should be 'the glue' of those views. I haven't used that yet. It's a new concept for me which I am trying to understand and *implement*. There's a project on a horizon where there will be a chance to gather requirements and design a system from scratch. As I see it, it will be a good time for discussions, that are more aware and focused on different views. 
+I am not sure yet what person in the organization should be 'the glue' of those views. I haven't used that yet. It's a new concept for me which I am trying to understand and start *implementing*. There's a project on a horizon where there will be a chance to gather requirements and design a system from scratch. As I see it, it will be a good time for discussions, that are more aware and focused on different views. 
 
 Different architectural models will also differ with the notation that is used to represent them.
 
@@ -54,9 +57,13 @@ The development view should also be considered when thinking about a specific do
 Should it be onion? Hexagonal? Or perhaps something simpler?
 
 ### The Physical View
-*Mapping the software to the hardware*. This view is taking into consideration how the services should be deployed, how the performance can be increased by scaling the application. Reliability, availability, and other non-functional requirements are also taken into consideration here.
+*Mapping the software to the hardware*. This view is taking into consideration how the services should be deployed, how the performance can be increased by scaling the application.
 
-You probably noticed that some of the mentioned non-functional requirements are duplicated in the process view... but that's exactly the point. The process view is focusing on the software side of handling those problems, whereas the physical view is looking from a hardware perspective.
+Reliability, availability, and other non-functional requirements are also taken into consideration here.
+
+You probably noticed that some of the mentioned non-functional requirements are duplicated in the process view... but that's exactly the point.
+
+The process view is focusing on the software side of handling those problems, whereas the physical view is looking from a hardware perspective.
 
 Stakeholders describing the business problems will be probably least interested in this view.
 
