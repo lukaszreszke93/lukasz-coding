@@ -19,6 +19,7 @@ According to this model, there are 5 views:
 - scenarios
 
 The "4+1" View Model diagram
+
 ![4+1 architectural view model diagram](https://lukaszcoding.com/wp-content/uploads/2020/05/41-architectural-view-model-diagram.png)
 
 Each of these views has a different goal and will be addressed when talking to different stakeholders. The goal is to be able to distinguish which view should be used in a given discussion or meeting. 
@@ -66,5 +67,7 @@ It's used to illustrate and validate the architecture design. It helps to 'tie' 
 
 ## Summary
 Those views are supposed to help us build greater software. Use them wherever you find it useful. It might click instantly in some teams to adopt the "4+1" View Model 1:1. Others might just want to take a part of it.
-I think it is worth being aware of that. Use-case situation could be when you have a feeling that discussion with business stakeholders about the problem domain is going into code workarounds or design decisions. Whereas it should go into the business process description that will solve that problem.
+I think it is worth being aware of that.
+Example use-case situation could be when you have a feeling that discussion with business stakeholders about the problem domain is going into code workarounds or design decisions. Whereas it should go into the business process description that will solve that problem.
+
 I am willing to try this approach, perhaps modernize it a bit and see how it works for me.
