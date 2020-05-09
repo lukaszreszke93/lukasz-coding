@@ -1,7 +1,10 @@
 "4+1" Architectural View Model
 ===============================
 
-Trying to capture the software system's architecture into one diagram can be hard. It might be even impossible for a complex system if there would be a readability requirement. One reason for that is the software systems have multiple layers that should be represented on those diagrams. Actually, the author of, "4+1" Architectural View Model, Kruchten, called them *architectual views*.
+Trying to capture the software system's architecture into one diagram can be hard. It might be even impossible for a complex system if there would be a readability requirement.
+One reason for that is the software systems have multiple layers that should be represented on those diagrams. So instead of trying to create one big diagram, it should be easier to split it into multiple system diagrams.
+
+"4+1" Architectural View Model created by Phillippe Kruchten, splits the system diagrams into 5 *architectural views*.
 
 Those views are represented by different stakeholders.
 Some of them are going to be interested only in the business logic.
@@ -11,7 +14,7 @@ Others will be interested in how the code should be written.
 The hosting of the application will be important for other people.
 
 Security and other non-functional requirements?
-And probably much more.
+And much more details, important to different departments.
 
 ## Architectural Model
 According to this model, there are 5 views working with each other:
@@ -72,13 +75,14 @@ It's been well described by the author by *"Putting it all together"*.
 
 This view is called scenarios or use cases.
 
-It's overlapping with other views, but it's all that the user cares about.
+It's overlapping with other views, but it's all that the user cares about as they describe sequences of interactions between system entities to solve business problem that user wants to solve.
 
 It's used to illustrate and validate the architecture design. It helps to 'tie' the architecture together to solve the business problem.
 
 ## Summary
 Those views are supposed to help us build greater software. Use them wherever you find it useful. It might click instantly in some teams to adopt the "4+1" View Model 1:1. Others might just want to take a part of it.
-I think it is worth being aware of that.
+
+I think it is worth being aware of that and use it when appropriate.
 
 Example use-case situation could be when you have a feeling that discussion with business stakeholders about the problem domain is going into code workarounds or design decisions. Whereas it should go into the business process description that will solve that problem.
 
