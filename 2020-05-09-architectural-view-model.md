@@ -69,7 +69,11 @@ Stakeholders describing the business problems will be probably least interested 
 
 ### The "+1" View
 It's been well described by the author by *"Putting it all together"*.
-This view is called scenarios or use cases. It's overlapping with other views, but it's all that the user cares about.
+
+This view is called scenarios or use cases.
+
+It's overlapping with other views, but it's all that the user cares about.
+
 It's used to illustrate and validate the architecture design. It helps to 'tie' the architecture together to solve the business problem.
 
 ## Summary
