@@ -28,7 +28,8 @@ _Note that OpenJson function is only available for databases that have compatibi
 
 ```
 
-This example provides a list of identifiers as a JSON array of numbers. The query converts the JSON array to a table of identifiers and filters all employees with ID specified within the list.
+This example provides a list of identifiers as a JSON array of numbers.
+The query converts the JSON array to a table of identifiers and filters all employees with ID specified within the list.
 
 This query is a equivalent to
 
@@ -47,6 +48,8 @@ In our example let's assume that the collection will be filtered by ids.
 In the sample codes I used EF Core 3.1 .
 
 First, we'll create FilterItem class which will be used in EF Context and in the query.
+This is keyless entity type in terms of EF Core.
+The purpose is to server as a return type for raw SQL queries.
 
 ```c#
     public class FilterItem
@@ -78,15 +81,23 @@ That is actually all the setup that we need.
 
 ### Usage of OpenJsonFilter in query
 
-OpenJson filtering is slightly different than regular filtering. As shown in T-SQL example, the filtering will not be just using `.Where()` extension. We'll have to use `Join()` instead.
+OpenJson filtering is slightly different than regular filtering. As shown in T-SQL example, the filtering will not be just using `Where()` extension. We'll have to use `Join()` instead.
 
 For the purpose of the example, let's say we have to find all orders for selected customers.
 
 ```c#
     public class OrderQuery
     {
-        public IEnumerable<int> CustomerIds {get; set;}
+        public IEnumerable<int> CustomerIds { get; set; }
         // Other properties for querying against customers
+    }
+
+    public class Order
+    {
+        public int CustomerId { get; set; }
+        public int Id { get; set; }
+        public IEnumerable<int> ItemIds { get; set; }
+        // other order properties
     }
 
     public class OrderProvider
@@ -100,12 +111,19 @@ For the purpose of the example, let's say we have to find all orders for selecte
             var result = _context.Orders
                 .Join(
                     _context.OpenJsonFilter(ids),
-                    order => order.Id,
+                    order => order.CustomerId,
                     jsonFilter => jsonFilter.Value,
-                    (order. jsonFilter) => order
+                    (order, jsonFilter) => order
                 );
 
             return result;
         }
     }
 ```
+
+So in this query we'll get all Orders matching given customer Ids.
+Customer Ids are passed in the OrderQuery as parameter of GetByCustomerIds method.
+Given Ids are serialized to string, as JSON array, and passed into OpenJsonFilter.
+Then, the ids are used to filter out expected rowset by inner join.
+
+This operation tells EF Core to use given ids as variable in query, instead of inserting variables directly into it.
