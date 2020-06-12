@@ -17,7 +17,7 @@ OpenJson returns a set of rows. Due to this fact, you can use it in FROM clause 
 
 _Note that OpenJson function is only available for databases that have compatibility level 130 or higher._
 
-# Example of a query used to filter collection using openjson
+### Example of a query used to filter collection using openjson
 
 ```SQL
 DECLARE @employeeIds NVARCHAR(4000) = N'[1,2,3,4]'
