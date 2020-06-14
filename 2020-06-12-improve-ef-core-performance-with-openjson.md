@@ -141,6 +141,7 @@ For the purpose of the example, let's say we have to find all orders for selecte
 So in this query we'll get all Orders matching given customer Ids.
 Customer Ids are passed in the OrderQuery as parameter of GetByCustomerIds method.
 Given Ids are serialized to string, as JSON array, and passed into OpenJsonFilter.
+
 Then, the ids are used to filter out expected rowset by inner join.
 
 This operation tells EF Core to use given ids as local variables in the query, instead of inserting variables directly into it. Which solves problem of parameters sniffing and query gets compiled with every exeuction, instead of being read from cache.
