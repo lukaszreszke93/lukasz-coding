@@ -29,9 +29,14 @@ OpenJson returns a set of rows. Due to this fact, you can use it in FROM clause 
 
 _Note that OpenJson function is only available for databases that have compatibility level 130 or higher._
 
+# Why open json will help with parameters problem?
+
+Local variables?
+
 ### Example of a query used to filter collection using openjson
 
 ```SQL
+
     DECLARE @employeeIds NVARCHAR(4000) = N'[1,2,3,4]'
 
     SELECT * FROM employee
@@ -74,7 +79,7 @@ Second, we have to create property for openjson filtering in Context.
 
 ```c#
     public virtual IQueryable<FilterItem> OpenJsonFilter(string ids) =>
-        Set<FilterItem>().FromSqlInterpolated($"select value from openjson( {ids} ");
+        Set<FilterItem>().FromSqlInterpolated($"select value from openjson( {ids} )");
 ```
 
 In the model builder we have to specify that FilterItem has no key.
@@ -138,8 +143,8 @@ Customer Ids are passed in the OrderQuery as parameter of GetByCustomerIds metho
 Given Ids are serialized to string, as JSON array, and passed into OpenJsonFilter.
 Then, the ids are used to filter out expected rowset by inner join.
 
-This operation tells EF Core to use given ids as variable in query, instead of inserting variables directly into it.
+This operation tells EF Core to use given ids as local variables in the query, instead of inserting variables directly into it. Which solves problem of parameters sniffing and query gets compiled with every exeuction, instead of being read from cache.
 
 ## Summary
 
-This technique is great when filtering by large array of ids is required.
+This technique is great when filtering by large array of ids is required and the query is timing out from time to time, due to this fact. The problem that it solves is that the cached execution plan might be optimal for small amount of parameters, but not for the same query with larger set of parameters. This is called parameters sniffing. This solution handles it by forcing EF to generate query that uses local variables.
