@@ -29,10 +29,6 @@ OpenJson returns a set of rows. Due to this fact, you can use it in FROM clause 
 
 _Note that OpenJson function is only available for databases that have compatibility level 130 or higher._
 
-# Why open json will help with parameters problem?
-
-Local variables?
-
 ### Example of a query used to filter collection using openjson
 
 ```SQL
