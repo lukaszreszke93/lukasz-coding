@@ -64,7 +64,7 @@ First, we'll create FilterItem class which will be used in EF Context and in the
 This is keyless entity type in terms of EF Core.
 The purpose is to server as a return type for raw SQL queries.
 
-```c#
+```csharp
     public class FilterItem
     {
         public int Value { get; set; }
@@ -73,7 +73,7 @@ The purpose is to server as a return type for raw SQL queries.
 
 Second, we have to create property for openjson filtering in Context.
 
-```c#
+```csharp
     public virtual IQueryable<FilterItem> OpenJsonFilter(string ids) =>
         Set<FilterItem>().FromSqlInterpolated($"select value from openjson( {ids} )");
 ```
@@ -81,7 +81,7 @@ Second, we have to create property for openjson filtering in Context.
 In the model builder we have to specify that FilterItem has no key.
 This helps EF Core interpreter to use this property correctly.
 
-```c#
+```csharp
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
@@ -98,7 +98,7 @@ OpenJson filtering is slightly different than regular filtering. As shown in T-S
 
 For the purpose of the example, let's say we have to find all orders for selected customers.
 
-```c#
+```csharp
     public class OrderQuery
     {
         public IEnumerable<int> CustomerIds { get; set; }
